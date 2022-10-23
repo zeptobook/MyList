@@ -17,6 +17,11 @@
 		0161A4642904E5F200C53960 /* MyListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0161A4632904E5F200C53960 /* MyListTests.swift */; };
 		0161A46E2904E5F200C53960 /* MyListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0161A46D2904E5F200C53960 /* MyListUITests.swift */; };
 		0161A4702904E5F200C53960 /* MyListUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0161A46F2904E5F200C53960 /* MyListUITestsLaunchTests.swift */; };
+		0161A47D29051F2400C53960 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0161A47C29051F2400C53960 /* CustomTabBarController.swift */; };
+		0161A47F2905213B00C53960 /* ListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0161A47E2905213B00C53960 /* ListController.swift */; };
+		0161A4812905214E00C53960 /* PlanController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0161A4802905214E00C53960 /* PlanController.swift */; };
+		0161A4832905216000C53960 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0161A4822905216000C53960 /* SettingsController.swift */; };
+		0161A4852905216D00C53960 /* AccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0161A4842905216D00C53960 /* AccountController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +56,11 @@
 		0161A4692904E5F200C53960 /* MyListUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyListUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0161A46D2904E5F200C53960 /* MyListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListUITests.swift; sourceTree = "<group>"; };
 		0161A46F2904E5F200C53960 /* MyListUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		0161A47C29051F2400C53960 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
+		0161A47E2905213B00C53960 /* ListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListController.swift; sourceTree = "<group>"; };
+		0161A4802905214E00C53960 /* PlanController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanController.swift; sourceTree = "<group>"; };
+		0161A4822905216000C53960 /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
+		0161A4842905216D00C53960 /* AccountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +119,11 @@
 				0161A4572904E5F200C53960 /* LaunchScreen.storyboard */,
 				0161A45A2904E5F200C53960 /* Info.plist */,
 				0161A4522904E5F100C53960 /* MyList.xcdatamodeld */,
+				0161A47C29051F2400C53960 /* CustomTabBarController.swift */,
+				0161A47E2905213B00C53960 /* ListController.swift */,
+				0161A4802905214E00C53960 /* PlanController.swift */,
+				0161A4822905216000C53960 /* SettingsController.swift */,
+				0161A4842905216D00C53960 /* AccountController.swift */,
 			);
 			path = MyList;
 			sourceTree = "<group>";
@@ -261,10 +276,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0161A4832905216000C53960 /* SettingsController.swift in Sources */,
 				0161A44E2904E5F100C53960 /* ViewController.swift in Sources */,
 				0161A4542904E5F100C53960 /* MyList.xcdatamodeld in Sources */,
+				0161A47D29051F2400C53960 /* CustomTabBarController.swift in Sources */,
 				0161A44A2904E5F100C53960 /* AppDelegate.swift in Sources */,
 				0161A44C2904E5F100C53960 /* SceneDelegate.swift in Sources */,
+				0161A4852905216D00C53960 /* AccountController.swift in Sources */,
+				0161A4812905214E00C53960 /* PlanController.swift in Sources */,
+				0161A47F2905213B00C53960 /* ListController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
