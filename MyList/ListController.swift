@@ -24,21 +24,12 @@ class ListController: UIViewController {
         
         let createFolderController = CreateFolderController()
         createFolderController.text = "Hello Adesh"
-        //createFolderController.delegate = self
-        
-//        let formNC = UINavigationController(rootViewController: createFolderController)
-//        formNC.modalPresentationStyle = UIModalPresentationStyle.pageSheet
-        
+
         if let sheet = createFolderController.sheetPresentationController {
             sheet.detents = [.medium()]
             sheet.prefersGrabberVisible = true
         }
-        
-//        if let sheet = formNC.presentationController as? UISheetPresentationController {
-//            sheet.detents = [.medium(), .large()]
-//            sheet.prefersGrabberVisible = true
-//        }
-        
+
         present(createFolderController, animated: true, completion: nil)
         print("opensheet")
     }
