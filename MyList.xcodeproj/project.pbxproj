@@ -22,6 +22,7 @@
 		0161A4812905214E00C53960 /* PlanController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0161A4802905214E00C53960 /* PlanController.swift */; };
 		0161A4832905216000C53960 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0161A4822905216000C53960 /* SettingsController.swift */; };
 		0161A4852905216D00C53960 /* AccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0161A4842905216D00C53960 /* AccountController.swift */; };
+		0161A487290664F000C53960 /* CreateFolderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0161A486290664F000C53960 /* CreateFolderController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		0161A4802905214E00C53960 /* PlanController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanController.swift; sourceTree = "<group>"; };
 		0161A4822905216000C53960 /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		0161A4842905216D00C53960 /* AccountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountController.swift; sourceTree = "<group>"; };
+		0161A486290664F000C53960 /* CreateFolderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFolderController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 				0161A4802905214E00C53960 /* PlanController.swift */,
 				0161A4822905216000C53960 /* SettingsController.swift */,
 				0161A4842905216D00C53960 /* AccountController.swift */,
+				0161A486290664F000C53960 /* CreateFolderController.swift */,
 			);
 			path = MyList;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 				0161A4852905216D00C53960 /* AccountController.swift in Sources */,
 				0161A4812905214E00C53960 /* PlanController.swift in Sources */,
 				0161A47F2905213B00C53960 /* ListController.swift in Sources */,
+				0161A487290664F000C53960 /* CreateFolderController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
