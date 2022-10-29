@@ -4,26 +4,27 @@ protocol FormControllerDelegate: AnyObject {
     func formControllerDidFinish(_ controller: CreateFolderController)
 }
 
-class CreateFolderController: UIViewController {
+class CreateFolderController: UIViewController, UITextFieldDelegate {
     
     var text: String? {
         didSet {
-            textField.text = text
+            //textField.text = text
         }
     }
     
     //weak var delegate: FormControllerDelegate?
-    private var textField = UITextField()
+    var tfGroupName = UITextField()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         view.backgroundColor = .systemBackground
+        self.tfGroupName.delegate = self
         setupForm()
     }
     
     override func viewWillLayoutSubviews() {
-        addNavigationButtons()
+        //addNavigationButtons()
     }
     
     private func addNavigationButtons() {
@@ -39,17 +40,28 @@ class CreateFolderController: UIViewController {
     }
     
     private func setupForm() {
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.addTarget(self, action: #selector(handleNewText), for: .editingChanged)
-        view.addSubview(textField)
+        tfGroupName.translatesAutoresizingMaskIntoConstraints = false
+        //tfGroupName.addTarget(self, action: #selector(handleNewText), for: .editingDidEnd)
+        //textField.borderStyle = .roundedRect
+        tfGroupName.placeholder = "Add your group name"
+        tfGroupName.autocorrectionType = .no
+        tfGroupName.keyboardType = .default
+        tfGroupName.returnKeyType = UIReturnKeyType.done
+        tfGroupName.clearButtonMode = .whileEditing
+        tfGroupName.becomeFirstResponder()
+        
+        view.addSubview(tfGroupName)
+        
         NSLayoutConstraint.activate([
-            textField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            textField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8),
-            textField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -8)])
+            tfGroupName.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 70),
+            tfGroupName.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8),
+            tfGroupName.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -8)])
+        
     }
     
     @objc private func handleNewText() {
-        text = textField.text
+        text = tfGroupName.text
+        print(tfGroupName.text!)
     }
     
     @objc private func cancel() {
@@ -57,6 +69,16 @@ class CreateFolderController: UIViewController {
     }
     
     @objc private func save() {
+        print(tfGroupName.text!)
+        tfGroupName.resignFirstResponder()
         self.dismiss(animated: true)
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        print(tfGroupName.text!)
+        tfGroupName.resignFirstResponder()
+        self.dismiss(animated: true)
+        return true
+    }
 }
+
