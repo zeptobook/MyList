@@ -14,7 +14,6 @@ class CreateFolderController: UIViewController {
     
     //weak var delegate: FormControllerDelegate?
     private var textField = UITextField()
-    let items = Range(0...20).map { "\($0)" }
     
     override func viewDidLoad() {
         super.viewDidLoad()
