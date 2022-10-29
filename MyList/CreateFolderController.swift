@@ -54,10 +54,10 @@ class CreateFolderController: UIViewController {
     }
     
     @objc private func cancel() {
-        
+        self.dismiss(animated: true)
     }
     
     @objc private func save() {
-        //delegate?.formControllerDidFinish(self)
+        self.dismiss(animated: true)
     }
 }

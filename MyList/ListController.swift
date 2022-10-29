@@ -27,10 +27,8 @@ class ListController: UIViewController {
 
         if let sheet = createFolderController.sheetPresentationController {
             sheet.detents = [.medium()]
-            sheet.prefersGrabberVisible = true
         }
 
         present(createFolderController, animated: true, completion: nil)
-        print("opensheet")
     }
 }
