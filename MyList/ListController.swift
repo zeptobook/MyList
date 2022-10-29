@@ -23,7 +23,8 @@ class ListController: UIViewController {
     @objc func openCreateFolderBS() {
         
         let createFolderController = CreateFolderController()
-        createFolderController.text = "Hello Adesh"
+        //createFolderController.text = "Hello Adesh"
+        //createFolderController.tfGroupName.becomeFirstResponder()
 
         if let sheet = createFolderController.sheetPresentationController {
             sheet.detents = [.medium()]
