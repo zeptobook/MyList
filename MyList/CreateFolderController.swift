@@ -1,4 +1,5 @@
 import UIKit
+import CoreData
 
 protocol FormControllerDelegate: AnyObject {
     func formControllerDidFinish(_ controller: CreateFolderController)
@@ -64,6 +65,7 @@ class CreateFolderController: UIViewController, UITextFieldDelegate {
         setImageAndConstraints()
         view.addSubview(stackView)
         stackView.translatesAutoresizingMaskIntoConstraints = false
+        addStackViewConstraints()
     }
     
     func setImageAndConstraints() {
@@ -129,10 +131,66 @@ class CreateFolderController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        print(tfGroupName.text!)
+        
+        createGroup(groupName: tfGroupName.text!)
+        readGroup()
         tfGroupName.resignFirstResponder()
         self.dismiss(animated: true)
         return true
+    }
+    
+    private func createGroup(groupName: String) {
+        
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        let managedContext = appDelegate.persistentContainer.viewContext
+        
+        let groupEntity = NSEntityDescription.entity(forEntityName: "Groups", in: managedContext)!
+        
+        let group =  NSManagedObject(entity: groupEntity, insertInto: managedContext)
+        
+        group.setValue(groupName, forKey: "groupName")
+        group.setValue(true, forKey: "isFavorite")
+        group.setValue(Date.getCurrentDate(), forKey: "reminderDate")
+        
+        do {
+            try managedContext.save()
+        } catch let error as NSError {
+            print("Could not save. \(error), \(error.userInfo)")
+        }
+    }
+    
+    private func readGroup() {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        let managedContext = appDelegate.persistentContainer.viewContext
+        
+        let fetchRequest =  NSFetchRequest<NSFetchRequestResult>(entityName: "Groups")
+        
+        do {
+            let result = try managedContext.fetch(fetchRequest)
+            for data in result as! [NSManagedObject] {
+                print(data.value(forKey: "groupName") as! String)
+                print(data.value(forKey: "reminderDate") as! String)
+            }
+        } catch let error as NSError {
+            print("Reading failed. \(error)")
+        }
+    }
+    
+    private func addStackViewConstraints() {
+        NSLayoutConstraint.activate([
+            stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 100)
+//            stackView.leftAnchor.constraint(equalTo: view.leftAnchor),
+//            stackView.rightAnchor.constraint(equalTo: view.rightAnchor),
+//            stackView.heightAnchor.constraint(equalToConstant: 200)
+        ])
+    }
+}
+
+extension Date {
+    static func getCurrentDate() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yyyy"
+        return dateFormatter.string(from: Date())
     }
 }
 

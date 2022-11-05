@@ -23,13 +23,15 @@ class ListController: UIViewController {
     @objc func openCreateFolderBS() {
         
         let createFolderController = CreateFolderController()
+        let nav = UINavigationController(rootViewController: createFolderController)
+        nav.modalPresentationStyle = .pageSheet
         //createFolderController.text = "Hello Adesh"
         //createFolderController.tfGroupName.becomeFirstResponder()
 
-        if let sheet = createFolderController.sheetPresentationController {
+        if let sheet = nav.sheetPresentationController {
             sheet.detents = [.medium()]
         }
 
-        present(createFolderController, animated: true, completion: nil)
+        present(nav, animated: true, completion: nil)
     }
 }
