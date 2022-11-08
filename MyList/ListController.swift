@@ -1,15 +1,44 @@
 import UIKit
+import CoreData
 
 class ListController: UIViewController {
 //    func formControllerDidFinish(_ controller: CreateFolderController) {
 //        print("hi")
 //    }
     
+    @IBOutlet weak var tableView: UITableView!
+    
+    var groupNames: [NSManagedObject] =  []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         configureBarItems()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        readGroup()
+    }
+    
+    public func readGroup() {
+        
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        let managedContext = appDelegate.persistentContainer.viewContext
+        
+        let fetchRequest =  NSFetchRequest<NSManagedObject>(entityName: "Groups")
+        
+        do {
+            groupNames = try managedContext.fetch(fetchRequest)
+            
+            
+        } catch let error as NSError {
+            print("Reading failed. \(error)")
+        }
     }
     
     private func configureBarItems() {
@@ -33,5 +62,21 @@ class ListController: UIViewController {
         }
 
         present(nav, animated: true, completion: nil)
+    }
+    
+    
+}
+
+extension ListController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return groupNames.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let group =  groupNames[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        cell.textLabel?.text =  group.value(forKeyPath: "groupName") as? String
+        return cell
     }
 }
