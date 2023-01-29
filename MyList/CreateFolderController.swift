@@ -128,14 +128,25 @@ class CreateFolderController: UIViewController, UITextFieldDelegate {
         print(tfGroupName.text!)
         tfGroupName.resignFirstResponder()
         self.dismiss(animated: true)
+        
+        
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
-        createGroup(groupName: tfGroupName.text!)
+        guard let groupname = tfGroupName.text, !groupname.isEmpty else {
+            return false
+        }
+        
+        //createGroup(groupName: tfGroupName.text!)
+        createGroup(groupName: groupname)
         readGroup()
         tfGroupName.resignFirstResponder()
         self.dismiss(animated: true)
+        
+        let lc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "listController") as! ListController
+        
+        lc.readGroup()
         return true
     }
     
