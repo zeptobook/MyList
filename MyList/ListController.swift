@@ -111,6 +111,10 @@ extension ListController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+            let managedContext = appDelegate.persistentContainer.viewContext
+            managedContext.delete(groupNames[indexPath.row])
+            
             groupNames.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
