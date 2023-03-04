@@ -1,7 +1,7 @@
 import UIKit
 import CoreData
 
-class ListController: UIViewController {
+class ListController: UIViewController, UITableViewDelegate {
 //    func formControllerDidFinish(_ controller: CreateFolderController) {
 //        print("hi")
 //    }
@@ -15,26 +15,55 @@ class ListController: UIViewController {
         // Do any additional setup after loading the view.
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        tableView.delegate = self
+        tableView.dataSource = self
+        //tableView.tableFooterView = UIView
+        tableView.refreshControl = UIRefreshControl()
+        tableView.refreshControl?.addTarget(self, action: #selector(readGroup), for: .valueChanged)
         configureBarItems()
         
     }
+    
+//    @objc public func refreshList() {
+//        groupNames = fetchGroups()
+//        self.tableView.reloadData()
+//    }
+//
+//    func fetchGroups() -> [NSManagedObject] {
+//        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+//        let managedContext = appDelegate?.persistentContainer.viewContext
+//
+//        let fetchRequest =  NSFetchRequest<NSManagedObject>(entityName: "Groups")
+//
+//
+//
+//        do {
+//            groupNames = try managedContext?.fetch(fetchRequest)
+//            tableView.refreshControl?.endRefreshing()
+//        } catch let error as NSError {
+//            print("Reading failed.\(error)")
+//        }
+//    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         readGroup()
+        //refreshList()
     }
     
-    public func readGroup() {
+    @objc public func readGroup() {
         
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         let managedContext = appDelegate.persistentContainer.viewContext
         
         let fetchRequest =  NSFetchRequest<NSManagedObject>(entityName: "Groups")
         
+        
         do {
             groupNames = try managedContext.fetch(fetchRequest)
-            
+            //self.tableView.refreshControl?.endRefreshing()
+            tableView.reloadData()
             
         } catch let error as NSError {
             print("Reading failed. \(error)")
@@ -78,5 +107,12 @@ extension ListController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         cell.textLabel?.text =  group.value(forKeyPath: "groupName") as? String
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            groupNames.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
     }
 }
