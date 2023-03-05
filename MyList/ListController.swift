@@ -121,6 +121,7 @@ extension ListController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TaskTableViewCell", for: indexPath) as! TaskTableViewCell
         let task = tasks[indexPath.row] as! Task
         cell.configure(task: task)
+        cell.selectionStyle = .none
         return cell
     }
     
@@ -131,6 +132,7 @@ extension ListController: UITableViewDataSource {
             managedContext.delete(groupNames[indexPath.row])
             
             groupNames.remove(at: indexPath.row)
+            tasks.removeObject(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }

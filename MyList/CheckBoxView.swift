@@ -53,9 +53,11 @@ class CheckBoxView: UIView {
         let image = UIImage(named: "small-check")?.withRenderingMode(.alwaysTemplate)
         self.checkBoxImageView.image = image
         self.checkBoxImageView.tintColor = .white
+        self.layer.borderWidth = 0
     }
     
     func markAsUnChecked() {
         self.checkBoxImageView.image = nil
+        self.layer.borderWidth = 1.0
     }
 }
