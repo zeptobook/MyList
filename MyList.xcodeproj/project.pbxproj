@@ -23,6 +23,9 @@
 		0161A4832905216000C53960 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0161A4822905216000C53960 /* SettingsController.swift */; };
 		0161A4852905216D00C53960 /* AccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0161A4842905216D00C53960 /* AccountController.swift */; };
 		0161A487290664F000C53960 /* CreateFolderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0161A486290664F000C53960 /* CreateFolderController.swift */; };
+		01AA9D1129B4C9FF0051F49C /* CheckBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AA9D1029B4C9FF0051F49C /* CheckBoxView.swift */; };
+		01AA9D1329B4CAD10051F49C /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AA9D1229B4CAD10051F49C /* Task.swift */; };
+		01AA9D1529B4CC110051F49C /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AA9D1429B4CC110051F49C /* TaskTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +66,9 @@
 		0161A4822905216000C53960 /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		0161A4842905216D00C53960 /* AccountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountController.swift; sourceTree = "<group>"; };
 		0161A486290664F000C53960 /* CreateFolderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFolderController.swift; sourceTree = "<group>"; };
+		01AA9D1029B4C9FF0051F49C /* CheckBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxView.swift; sourceTree = "<group>"; };
+		01AA9D1229B4CAD10051F49C /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		01AA9D1429B4CC110051F49C /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +133,9 @@
 				0161A4822905216000C53960 /* SettingsController.swift */,
 				0161A4842905216D00C53960 /* AccountController.swift */,
 				0161A486290664F000C53960 /* CreateFolderController.swift */,
+				01AA9D1029B4C9FF0051F49C /* CheckBoxView.swift */,
+				01AA9D1229B4CAD10051F49C /* Task.swift */,
+				01AA9D1429B4CC110051F49C /* TaskTableViewCell.swift */,
 			);
 			path = MyList;
 			sourceTree = "<group>";
@@ -280,11 +289,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				0161A4832905216000C53960 /* SettingsController.swift in Sources */,
+				01AA9D1529B4CC110051F49C /* TaskTableViewCell.swift in Sources */,
 				0161A44E2904E5F100C53960 /* ViewController.swift in Sources */,
 				0161A4542904E5F100C53960 /* MyList.xcdatamodeld in Sources */,
 				0161A47D29051F2400C53960 /* CustomTabBarController.swift in Sources */,
+				01AA9D1329B4CAD10051F49C /* Task.swift in Sources */,
 				0161A44A2904E5F100C53960 /* AppDelegate.swift in Sources */,
 				0161A44C2904E5F100C53960 /* SceneDelegate.swift in Sources */,
+				01AA9D1129B4C9FF0051F49C /* CheckBoxView.swift in Sources */,
 				0161A4852905216D00C53960 /* AccountController.swift in Sources */,
 				0161A4812905214E00C53960 /* PlanController.swift in Sources */,
 				0161A47F2905213B00C53960 /* ListController.swift in Sources */,

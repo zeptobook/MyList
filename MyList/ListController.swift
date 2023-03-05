@@ -9,6 +9,7 @@ class ListController: UIViewController, UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
     
     var groupNames: [NSManagedObject] =  []
+    var tasks = NSMutableArray()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,8 +63,18 @@ class ListController: UIViewController, UITableViewDelegate {
         
         do {
             groupNames = try managedContext.fetch(fetchRequest)
+            let result = try managedContext.fetch(fetchRequest)
             //self.tableView.refreshControl?.endRefreshing()
-            tableView.reloadData()
+            //tableView.reloadData()
+            
+            for data in result {
+                let task = Task()
+                task.name = data.value(forKey: "groupName") as? String
+                task.reminderDate = data.value(forKey: "reminderDate") as? String
+                //print(data.value(forKey: "groupName") as! String)
+                //print(data.value(forKey: "reminderDate") as! String)
+                tasks.add(task)
+            }
             
         } catch let error as NSError {
             print("Reading failed. \(error)")
@@ -103,9 +114,13 @@ extension ListController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let group =  groupNames[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.text =  group.value(forKeyPath: "groupName") as? String
+        //let group =  groupNames[indexPath.row]
+        //let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        //cell.textLabel?.text =  group.value(forKeyPath: "groupName") as? String
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TaskTableViewCell", for: indexPath) as! TaskTableViewCell
+        let task = tasks[indexPath.row] as! Task
+        cell.configure(task: task)
         return cell
     }
     
