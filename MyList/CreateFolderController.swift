@@ -7,6 +7,8 @@ protocol FormControllerDelegate: AnyObject {
 
 class CreateFolderController: UIViewController, UITextFieldDelegate {
     
+    var update: (() -> Void)?
+    
     var text: String? {
         didSet {
             //textField.text = text
@@ -144,9 +146,11 @@ class CreateFolderController: UIViewController, UITextFieldDelegate {
         tfGroupName.resignFirstResponder()
         self.dismiss(animated: true)
         
-        let lc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "listController") as! ListController
+//        let lc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "listController") as! ListController
+//
+//        lc.readGroup()
         
-        lc.readGroup()
+        update?()
         return true
     }
     

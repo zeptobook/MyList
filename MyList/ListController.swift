@@ -2,9 +2,6 @@ import UIKit
 import CoreData
 
 class ListController: UIViewController, UITableViewDelegate {
-//    func formControllerDidFinish(_ controller: CreateFolderController) {
-//        print("hi")
-//    }
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -18,39 +15,15 @@ class ListController: UIViewController, UITableViewDelegate {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         tableView.delegate = self
         tableView.dataSource = self
-        //tableView.tableFooterView = UIView
-        tableView.refreshControl = UIRefreshControl()
-        tableView.refreshControl?.addTarget(self, action: #selector(readGroup), for: .valueChanged)
-        configureBarItems()
         
+        configureBarItems()
     }
-    
-//    @objc public func refreshList() {
-//        groupNames = fetchGroups()
-//        self.tableView.reloadData()
-//    }
-//
-//    func fetchGroups() -> [NSManagedObject] {
-//        let appDelegate = UIApplication.shared.delegate as? AppDelegate
-//        let managedContext = appDelegate?.persistentContainer.viewContext
-//
-//        let fetchRequest =  NSFetchRequest<NSManagedObject>(entityName: "Groups")
-//
-//
-//
-//        do {
-//            groupNames = try managedContext?.fetch(fetchRequest)
-//            tableView.refreshControl?.endRefreshing()
-//        } catch let error as NSError {
-//            print("Reading failed.\(error)")
-//        }
-//    }
+
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         readGroup()
-        //refreshList()
     }
     
     @objc public func readGroup() {
@@ -64,9 +37,8 @@ class ListController: UIViewController, UITableViewDelegate {
         do {
             groupNames = try managedContext.fetch(fetchRequest)
             let result = try managedContext.fetch(fetchRequest)
-            //self.tableView.refreshControl?.endRefreshing()
-            //tableView.reloadData()
             
+            tasks.removeAllObjects()
             for data in result {
                 let task = Task()
                 task.name = data.value(forKey: "groupName") as? String
@@ -75,6 +47,8 @@ class ListController: UIViewController, UITableViewDelegate {
                 //print(data.value(forKey: "reminderDate") as! String)
                 tasks.add(task)
             }
+            
+            tableView.reloadData()
             
         } catch let error as NSError {
             print("Reading failed. \(error)")
@@ -94,8 +68,12 @@ class ListController: UIViewController, UITableViewDelegate {
         let createFolderController = CreateFolderController()
         let nav = UINavigationController(rootViewController: createFolderController)
         nav.modalPresentationStyle = .pageSheet
-        //createFolderController.text = "Hello Adesh"
-        //createFolderController.tfGroupName.becomeFirstResponder()
+        
+        createFolderController.update = {
+            DispatchQueue.main.async {
+                self.readGroup()
+            }
+        }
 
         if let sheet = nav.sheetPresentationController {
             sheet.detents = [.medium()]
@@ -114,9 +92,6 @@ extension ListController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //let group =  groupNames[indexPath.row]
-        //let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        //cell.textLabel?.text =  group.value(forKeyPath: "groupName") as? String
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "TaskTableViewCell", for: indexPath) as! TaskTableViewCell
         let task = tasks[indexPath.row] as! Task
