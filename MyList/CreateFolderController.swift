@@ -89,7 +89,7 @@ class CreateFolderController: UIViewController, UITextFieldDelegate {
         let width = self.view.frame.width
         let navigationBar: UINavigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: width, height: 44))
         self.view.addSubview(navigationBar);
-        let navigationItem = UINavigationItem(title: "Add Group")
+        let navigationItem = UINavigationItem(title: "Add Task")
         let doneBtn = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(save))
         let cancelBtn = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancel))
         navigationItem.rightBarButtonItem = doneBtn
@@ -101,7 +101,7 @@ class CreateFolderController: UIViewController, UITextFieldDelegate {
         tfGroupName.translatesAutoresizingMaskIntoConstraints = false
         //tfGroupName.addTarget(self, action: #selector(handleNewText), for: .editingDidEnd)
         //textField.borderStyle = .roundedRect
-        tfGroupName.placeholder = "Add your group name"
+        tfGroupName.placeholder = "Add Task"
         tfGroupName.autocorrectionType = .no
         tfGroupName.keyboardType = .default
         tfGroupName.returnKeyType = UIReturnKeyType.done

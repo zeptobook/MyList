@@ -38,7 +38,7 @@
             </objects>
             <point key="canvasLocation" x="-355" y="1431"/>
         </scene>
-        <!--List-->
+        <!--Tasks-->
         <scene sceneID="AV1-Mr-ftQ">
             <objects>
                 <viewController storyboardIdentifier="listController" id="qCo-IN-864" customClass="ListController" customModule="MyList" customModuleProvider="target" sceneMemberID="viewController">
@@ -90,7 +90,7 @@
                             <constraint firstItem="3O6-0z-fky" firstAttribute="leading" secondItem="5yc-wX-twi" secondAttribute="leading" id="zb7-51-RNl"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="List" id="5SL-LH-saI"/>
+                    <navigationItem key="navigationItem" title="Tasks" id="5SL-LH-saI"/>
                     <connections>
                         <outlet property="tableView" destination="3O6-0z-fky" id="ZhW-xx-FSV"/>
                     </connections>
