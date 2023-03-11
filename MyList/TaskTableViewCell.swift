@@ -12,6 +12,7 @@ class TaskTableViewCell: UITableViewCell {
     
     @IBOutlet weak var name: UILabel?
     @IBOutlet weak var checkbox: CheckBoxView?
+    @IBOutlet weak var favorite: FavoriteView?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -31,6 +32,12 @@ class TaskTableViewCell: UITableViewCell {
             self.checkbox!.markAsUnChecked()
         }
         
+        if(task.isFavorite) {
+            self.favorite!.markAsFavorite()
+        } else {
+            self.favorite!.markAsUnFavorite()
+        }
+        
         self.name?.text = task.name
         
         self.checkbox?.checkBoxChanged = {
@@ -42,6 +49,17 @@ class TaskTableViewCell: UITableViewCell {
                 task.isSelected = false
             }
         }
+        
+        self.favorite?.favoriteChanged = {
+            if(!task.isFavorite){
+                self.favorite!.markAsFavorite()
+                task.isFavorite = true
+            } else {
+                self.favorite!.markAsUnFavorite()
+                task.isFavorite = false
+            }
+        }
+        
     }
 
 }

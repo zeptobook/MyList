@@ -27,6 +27,7 @@ class CheckBoxView: UIView {
         self.layer.borderColor = UIColor.white.cgColor
         self.isUserInteractionEnabled = true
         
+        
         //let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
         
         self.checkBoxImageView.frame = CGRectMake(2, 2, 25, 25)

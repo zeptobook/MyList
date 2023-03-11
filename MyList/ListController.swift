@@ -43,6 +43,7 @@ class ListController: UIViewController, UITableViewDelegate {
                 let task = Task()
                 task.name = data.value(forKey: "groupName") as? String
                 task.reminderDate = data.value(forKey: "reminderDate") as? String
+                //task.isFavorite = true
                 //print(data.value(forKey: "groupName") as! String)
                 //print(data.value(forKey: "reminderDate") as! String)
                 tasks.add(task)
@@ -57,7 +58,7 @@ class ListController: UIViewController, UITableViewDelegate {
     
     private func configureBarItems() {
         navigationItem.rightBarButtonItems = [
-            UIBarButtonItem(image: UIImage(systemName: "list.dash"), style: .done, target: self, action: nil),
+            UIBarButtonItem(image: UIImage(systemName: "ellipsis"), style: .done, target: self, action: #selector(showTaskOptions)),
             //UIBarButtonItem(barButtonSystemItem: .add, target: self, action: nil)
             UIBarButtonItem(image: UIImage(systemName: "folder.badge.plus"), style: .done, target: self, action: #selector(openCreateFolderBS))
             ]
@@ -82,7 +83,9 @@ class ListController: UIViewController, UITableViewDelegate {
         present(nav, animated: true, completion: nil)
     }
     
-    
+    @objc func showTaskOptions() {
+        print("show task options")
+    }
 }
 
 extension ListController: UITableViewDataSource {

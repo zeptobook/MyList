@@ -57,21 +57,43 @@
                                             <rect key="frame" x="0.0" y="0.0" width="390" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tff-41-fR7">
-                                                    <rect key="frame" x="58" y="14.666666666666664" width="312" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tff-41-fR7">
+                                                    <rect key="frame" x="58" y="15" width="205" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="O7x-0l-MJG"/>
+                                                        <constraint firstAttribute="width" constant="312" id="zyB-qK-kho"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wUo-aL-ef2" customClass="CheckBoxView" customModule="MyList" customModuleProvider="target">
-                                                    <rect key="frame" x="20" y="11" width="30" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wUo-aL-ef2" customClass="CheckBoxView" customModule="MyList" customModuleProvider="target">
+                                                    <rect key="frame" x="20" y="10" width="30" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="SdI-C3-0BW"/>
+                                                        <constraint firstAttribute="width" constant="30" id="kD7-99-kRX"/>
+                                                    </constraints>
+                                                </view>
+                                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6ze-fK-gIH" customClass="FavoriteView" customModule="MyList" customModuleProvider="target">
+                                                    <rect key="frame" x="341" y="10" width="30" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="5BJ-dB-cBW"/>
+                                                        <constraint firstAttribute="width" constant="30" id="fg5-jO-30G"/>
+                                                    </constraints>
                                                 </view>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="6ze-fK-gIH" secondAttribute="trailing" constant="19" id="AZ2-c2-dSF"/>
+                                                <constraint firstItem="Tff-41-fR7" firstAttribute="centerY" secondItem="brh-TU-NuB" secondAttribute="centerY" id="TBd-bC-HX3"/>
+                                                <constraint firstItem="wUo-aL-ef2" firstAttribute="leading" secondItem="brh-TU-NuB" secondAttribute="leading" constant="20" symbolic="YES" id="mte-6C-X3f"/>
+                                                <constraint firstItem="Tff-41-fR7" firstAttribute="leading" secondItem="wUo-aL-ef2" secondAttribute="trailing" constant="8" symbolic="YES" id="rIP-ug-b2r"/>
+                                                <constraint firstItem="6ze-fK-gIH" firstAttribute="top" secondItem="brh-TU-NuB" secondAttribute="topMargin" constant="-4" id="wRy-Md-RSZ"/>
+                                                <constraint firstItem="wUo-aL-ef2" firstAttribute="centerY" secondItem="brh-TU-NuB" secondAttribute="centerY" id="x3Q-KX-JA0"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="checkbox" destination="wUo-aL-ef2" id="Ja8-Qq-SF9"/>
+                                            <outlet property="favorite" destination="6ze-fK-gIH" id="aWP-eU-GZp"/>
                                             <outlet property="name" destination="Tff-41-fR7" id="JY9-rB-fSQ"/>
                                         </connections>
                                     </tableViewCell>
