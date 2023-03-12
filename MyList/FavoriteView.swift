@@ -6,12 +6,14 @@
 //
 
 import UIKit
+import AVFoundation
 
 class FavoriteView: UIView {
 
     var isChecked: Bool
     var favoriteImageView: UIImageView
     var favoriteChanged: () -> () = {}
+    var player = SoundPlayer()
 
     required init?(coder aDecoder: NSCoder) {
         self.isChecked = false
@@ -49,6 +51,7 @@ class FavoriteView: UIView {
         self.favoriteImageView.image = image
         self.favoriteImageView.tintColor = .white
         self.layer.borderWidth = 0
+        player.playFavoriteSound()
     }
     
     func markAsUnFavorite() {
@@ -58,4 +61,5 @@ class FavoriteView: UIView {
         //self.favoriteImageView.tintColor = .gray
         self.layer.borderWidth = 0
     }
+
 }

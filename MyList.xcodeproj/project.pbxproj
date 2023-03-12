@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		01511EBD29BCA0BA00ABAC39 /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01511EBC29BCA0BA00ABAC39 /* FavoriteView.swift */; };
+		01511EC329BD850700ABAC39 /* Correct-ding-sound-effect.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 01511EC229BD850700ABAC39 /* Correct-ding-sound-effect.mp3 */; };
+		01511EC529BD887300ABAC39 /* Empty-trash.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 01511EC429BD887200ABAC39 /* Empty-trash.mp3 */; };
+		01511EC729BD88B700ABAC39 /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01511EC629BD88B700ABAC39 /* SoundPlayer.swift */; };
 		0161A44A2904E5F100C53960 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0161A4492904E5F100C53960 /* AppDelegate.swift */; };
 		0161A44C2904E5F100C53960 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0161A44B2904E5F100C53960 /* SceneDelegate.swift */; };
 		0161A44E2904E5F100C53960 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0161A44D2904E5F100C53960 /* ViewController.swift */; };
@@ -48,6 +51,9 @@
 
 /* Begin PBXFileReference section */
 		01511EBC29BCA0BA00ABAC39 /* FavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteView.swift; sourceTree = "<group>"; };
+		01511EC229BD850700ABAC39 /* Correct-ding-sound-effect.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Correct-ding-sound-effect.mp3"; sourceTree = "<group>"; };
+		01511EC429BD887200ABAC39 /* Empty-trash.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Empty-trash.mp3"; sourceTree = "<group>"; };
+		01511EC629BD88B700ABAC39 /* SoundPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPlayer.swift; sourceTree = "<group>"; };
 		0161A4462904E5F100C53960 /* MyList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0161A4492904E5F100C53960 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0161A44B2904E5F100C53960 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +104,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		01511EC129BD84EF00ABAC39 /* audio */ = {
+			isa = PBXGroup;
+			children = (
+				01511EC429BD887200ABAC39 /* Empty-trash.mp3 */,
+				01511EC229BD850700ABAC39 /* Correct-ding-sound-effect.mp3 */,
+			);
+			path = audio;
+			sourceTree = "<group>";
+		};
 		0161A43D2904E5F000C53960 = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +136,7 @@
 		0161A4482904E5F100C53960 /* MyList */ = {
 			isa = PBXGroup;
 			children = (
+				01511EC129BD84EF00ABAC39 /* audio */,
 				0161A4492904E5F100C53960 /* AppDelegate.swift */,
 				0161A44B2904E5F100C53960 /* SceneDelegate.swift */,
 				0161A44D2904E5F100C53960 /* ViewController.swift */,
@@ -139,6 +155,7 @@
 				01511EBC29BCA0BA00ABAC39 /* FavoriteView.swift */,
 				01AA9D1229B4CAD10051F49C /* Task.swift */,
 				01AA9D1429B4CC110051F49C /* TaskTableViewCell.swift */,
+				01511EC629BD88B700ABAC39 /* SoundPlayer.swift */,
 			);
 			path = MyList;
 			sourceTree = "<group>";
@@ -264,6 +281,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01511EC529BD887300ABAC39 /* Empty-trash.mp3 in Resources */,
+				01511EC329BD850700ABAC39 /* Correct-ding-sound-effect.mp3 in Resources */,
 				0161A4592904E5F200C53960 /* LaunchScreen.storyboard in Resources */,
 				0161A4562904E5F200C53960 /* Assets.xcassets in Resources */,
 				0161A4512904E5F100C53960 /* Main.storyboard in Resources */,
@@ -301,6 +320,7 @@
 				0161A44A2904E5F100C53960 /* AppDelegate.swift in Sources */,
 				0161A44C2904E5F100C53960 /* SceneDelegate.swift in Sources */,
 				01AA9D1129B4C9FF0051F49C /* CheckBoxView.swift in Sources */,
+				01511EC729BD88B700ABAC39 /* SoundPlayer.swift in Sources */,
 				0161A4852905216D00C53960 /* AccountController.swift in Sources */,
 				0161A4812905214E00C53960 /* PlanController.swift in Sources */,
 				0161A47F2905213B00C53960 /* ListController.swift in Sources */,
