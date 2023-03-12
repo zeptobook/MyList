@@ -8,6 +8,7 @@ protocol FormControllerDelegate: AnyObject {
 class CreateFolderController: UIViewController, UITextFieldDelegate {
     
     var update: (() -> Void)?
+    var isFavorite: Bool = false
     
     var text: String? {
         didSet {
@@ -38,6 +39,7 @@ class CreateFolderController: UIViewController, UITextFieldDelegate {
         let btn = UIButton()
         btn.setImage(UIImage(systemName: "star", withConfiguration: config), for: .normal)
         btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.addTarget(self, action: #selector(self.favoriteBtnAction), for: .touchUpInside)
         return btn
     }()
     
@@ -141,7 +143,7 @@ class CreateFolderController: UIViewController, UITextFieldDelegate {
         }
         
         //createGroup(groupName: tfGroupName.text!)
-        createGroup(groupName: groupname)
+        createGroup(groupName: groupname, isFav: isFavorite)
         readGroup()
         tfGroupName.resignFirstResponder()
         self.dismiss(animated: true)
@@ -154,7 +156,7 @@ class CreateFolderController: UIViewController, UITextFieldDelegate {
         return true
     }
     
-    private func createGroup(groupName: String) {
+    private func createGroup(groupName: String, isFav: Bool) {
         
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         let managedContext = appDelegate.persistentContainer.viewContext
@@ -164,7 +166,7 @@ class CreateFolderController: UIViewController, UITextFieldDelegate {
         let group =  NSManagedObject(entity: groupEntity, insertInto: managedContext)
         
         group.setValue(groupName, forKey: "groupName")
-        group.setValue(true, forKey: "isFavorite")
+        group.setValue(isFav, forKey: "isFavorite")
         group.setValue(Date.getCurrentDate(), forKey: "reminderDate")
         
         do {
@@ -198,6 +200,16 @@ class CreateFolderController: UIViewController, UITextFieldDelegate {
 //            stackView.rightAnchor.constraint(equalTo: view.rightAnchor),
 //            stackView.heightAnchor.constraint(equalToConstant: 200)
         ])
+    }
+    
+    @objc private func favoriteBtnAction(sender: UIButton) {
+        isFavorite = !isFavorite
+        
+        if(isFavorite == true) {
+            sender.setImage(UIImage(systemName: "star.fill", withConfiguration: config), for: .normal)
+        } else {
+            sender.setImage(UIImage(systemName: "star", withConfiguration: config), for: .normal)
+        }
     }
 }
 

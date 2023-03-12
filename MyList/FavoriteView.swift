@@ -51,7 +51,7 @@ class FavoriteView: UIView {
         self.favoriteImageView.image = image
         self.favoriteImageView.tintColor = .white
         self.layer.borderWidth = 0
-        player.playFavoriteSound()
+        //player.playFavoriteSound()
     }
     
     func markAsUnFavorite() {

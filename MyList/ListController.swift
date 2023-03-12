@@ -44,7 +44,7 @@ class ListController: UIViewController, UITableViewDelegate {
                 let task = Task()
                 task.name = data.value(forKey: "groupName") as? String
                 task.reminderDate = data.value(forKey: "reminderDate") as? String
-                //task.isFavorite = true
+                task.isFavorite = data.value(forKey: "isFavorite") as! Bool
                 //print(data.value(forKey: "groupName") as! String)
                 //print(data.value(forKey: "reminderDate") as! String)
                 tasks.add(task)
