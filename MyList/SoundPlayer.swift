@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 
 class SoundPlayer {
-    var player: AVAudioPlayer!
+    private var player: AVAudioPlayer!
     
     func playFavoriteSound() {
         let url = Bundle.main.url(forResource: "Correct-ding-sound-effect", withExtension: "mp3")

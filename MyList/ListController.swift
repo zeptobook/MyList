@@ -7,6 +7,7 @@ class ListController: UIViewController, UITableViewDelegate {
     
     var groupNames: [NSManagedObject] =  []
     var tasks = NSMutableArray()
+    var player = SoundPlayer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -112,6 +113,7 @@ extension ListController: UITableViewDataSource {
             groupNames.remove(at: indexPath.row)
             tasks.removeObject(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
+            player.playDeleteSound()
         }
     }
 }
