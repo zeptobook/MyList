@@ -75,7 +75,7 @@
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6ze-fK-gIH" customClass="FavoriteView" customModule="MyList" customModuleProvider="target">
-                                                    <rect key="frame" x="341" y="10" width="30" height="30"/>
+                                                    <rect key="frame" x="341" y="10" width="15" height="15"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="5BJ-dB-cBW"/>
                                                         <constraint firstAttribute="width" constant="30" id="fg5-jO-30G"/>

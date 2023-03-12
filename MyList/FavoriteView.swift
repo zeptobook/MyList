@@ -27,7 +27,7 @@ class FavoriteView: UIView {
         //self.layer.borderColor = UIColor.white.cgColor
         self.isUserInteractionEnabled = true
         
-        self.favoriteImageView.frame = CGRectMake(2, 2, 25, 25)
+        self.favoriteImageView.frame = CGRectMake(2, 2, 20, 20)
         
         self.addSubview(self.favoriteImageView)
         // register tap recognizers
@@ -53,9 +53,9 @@ class FavoriteView: UIView {
     
     func markAsUnFavorite() {
         //let image = UIImage(named: "emptyStar")?.withRenderingMode(.alwaysTemplate)
-        let image = UIImage(named: "emptyStar")
+        let image = UIImage(named: "emptyStar2")
         self.favoriteImageView.image = image
-        self.favoriteImageView.tintColor = .white
+        //self.favoriteImageView.tintColor = .gray
         self.layer.borderWidth = 0
     }
 }
