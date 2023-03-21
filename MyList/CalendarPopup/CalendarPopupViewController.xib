@@ -17,16 +17,35 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hello Adesh" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="icq-S5-Yh5">
-                    <rect key="frame" x="135" y="393" width="146" height="66"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                    <nil key="textColor"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date And Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zbt-bF-zfz">
+                    <rect key="frame" x="140" y="79" width="113" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="L2P-x9-nF0"/>
+                        <constraint firstAttribute="width" constant="113" id="iGf-jl-FfY"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pdc-i7-jvb">
+                    <rect key="frame" x="307" y="74" width="65" height="35"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Done"/>
+                    <connections>
+                        <action selector="Done:" destination="-1" eventType="touchUpInside" id="wpy-nN-rHA"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="Zbt-bF-zfz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="140" id="Atu-nK-fEN"/>
+                <constraint firstItem="Pdc-i7-jvb" firstAttribute="leading" secondItem="Zbt-bF-zfz" secondAttribute="trailing" constant="54" id="LRp-lE-z7g"/>
+                <constraint firstItem="Pdc-i7-jvb" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="15" id="MmK-wU-UbM"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Pdc-i7-jvb" secondAttribute="trailing" constant="21" id="cIt-n0-Q6a"/>
+                <constraint firstItem="Zbt-bF-zfz" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="y10-qd-Aas"/>
+            </constraints>
             <point key="canvasLocation" x="136.64122137404578" y="19.718309859154932"/>
         </view>
     </objects>

@@ -212,11 +212,6 @@ class CreateFolderController: UIViewController, UITextFieldDelegate {
     }
     
     @objc private func openCalendar(sender: UIButton) {
-//        var calendarWindow: CalendarPopUpWindow
-//
-//        calendarWindow = CalendarPopUpWindow(title: "Timer", text: "Hello", buttontext: "OK")
-//        self.present(calendarWindow, animated: true)
-        
         let calendarPopup = CalendarPopupViewController()
         calendarPopup.appear(sender: self)
     }

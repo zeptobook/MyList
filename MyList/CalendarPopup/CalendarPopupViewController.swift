@@ -9,6 +9,10 @@ import UIKit
 
 class CalendarPopupViewController: UIViewController {
 
+    @IBAction func Done(_ sender: Any) {
+        hide()
+    }
+    
     init() {
         super.init(nibName: "CalendarPopupViewController", bundle: nil)
         self.modalPresentationStyle = .formSheet
@@ -31,18 +35,8 @@ class CalendarPopupViewController: UIViewController {
     func appear(sender: UIViewController) {
         sender.present(self, animated: true)
     }
-    
-//    private func show() {
-//        UIView.animate(withDuration: 1, delay: 0.1, animations: nil)
-//    }
 
     func hide() {
-        UIView.animate(withDuration: 1, delay: 0.0, options: .curveEaseOut) {
-            
-        } completion: { _ in
-            self.dismiss(animated: false)
-            self.removeFromParent()
-        }
-        
+        self.dismiss(animated: true)
     }
 }
