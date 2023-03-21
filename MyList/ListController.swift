@@ -101,6 +101,7 @@ extension ListController: UITableViewDataSource {
         let task = tasks[indexPath.row] as! Task
         cell.configure(task: task)
         cell.selectionStyle = .none
+        updateTaskStatus(isSelected: task.isSelected)
         return cell
     }
     
@@ -115,5 +116,9 @@ extension ListController: UITableViewDataSource {
             tableView.deleteRows(at: [indexPath], with: .fade)
             player.playDeleteSound()
         }
+    }
+    
+    func updateTaskStatus(isSelected: Bool) {
+        print(isSelected)
     }
 }

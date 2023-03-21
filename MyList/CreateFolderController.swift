@@ -31,6 +31,7 @@ class CreateFolderController: UIViewController, UITextFieldDelegate {
     lazy var calendarBtn: UIButton = {
         let btn = UIButton()
         btn.setImage(UIImage(systemName: "calendar", withConfiguration: config), for: .normal)
+        btn.addTarget(self, action: #selector(self.openCalendar), for: .touchUpInside)
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
     }()
@@ -132,8 +133,6 @@ class CreateFolderController: UIViewController, UITextFieldDelegate {
         print(tfGroupName.text!)
         tfGroupName.resignFirstResponder()
         self.dismiss(animated: true)
-        
-        
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -210,6 +209,16 @@ class CreateFolderController: UIViewController, UITextFieldDelegate {
         } else {
             sender.setImage(UIImage(systemName: "star", withConfiguration: config), for: .normal)
         }
+    }
+    
+    @objc private func openCalendar(sender: UIButton) {
+//        var calendarWindow: CalendarPopUpWindow
+//
+//        calendarWindow = CalendarPopUpWindow(title: "Timer", text: "Hello", buttontext: "OK")
+//        self.present(calendarWindow, animated: true)
+        
+        let calendarPopup = CalendarPopupViewController()
+        calendarPopup.appear(sender: self)
     }
 }
 

@@ -11,6 +11,7 @@
 		01511EC329BD850700ABAC39 /* Correct-ding-sound-effect.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 01511EC229BD850700ABAC39 /* Correct-ding-sound-effect.mp3 */; };
 		01511EC529BD887300ABAC39 /* Empty-trash.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 01511EC429BD887200ABAC39 /* Empty-trash.mp3 */; };
 		01511EC729BD88B700ABAC39 /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01511EC629BD88B700ABAC39 /* SoundPlayer.swift */; };
+		01511EC929BE1E6B00ABAC39 /* CalendarPopupWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01511EC829BE1E6B00ABAC39 /* CalendarPopupWindow.swift */; };
 		0161A44A2904E5F100C53960 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0161A4492904E5F100C53960 /* AppDelegate.swift */; };
 		0161A44C2904E5F100C53960 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0161A44B2904E5F100C53960 /* SceneDelegate.swift */; };
 		0161A44E2904E5F100C53960 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0161A44D2904E5F100C53960 /* ViewController.swift */; };
@@ -27,6 +28,8 @@
 		0161A4832905216000C53960 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0161A4822905216000C53960 /* SettingsController.swift */; };
 		0161A4852905216D00C53960 /* AccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0161A4842905216D00C53960 /* AccountController.swift */; };
 		0161A487290664F000C53960 /* CreateFolderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0161A486290664F000C53960 /* CreateFolderController.swift */; };
+		017805F929C8C54500AE3CED /* CalendarPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017805F729C8C54500AE3CED /* CalendarPopupViewController.swift */; };
+		017805FA29C8C54500AE3CED /* CalendarPopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 017805F829C8C54500AE3CED /* CalendarPopupViewController.xib */; };
 		01AA9D1129B4C9FF0051F49C /* CheckBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AA9D1029B4C9FF0051F49C /* CheckBoxView.swift */; };
 		01AA9D1329B4CAD10051F49C /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AA9D1229B4CAD10051F49C /* Task.swift */; };
 		01AA9D1529B4CC110051F49C /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AA9D1429B4CC110051F49C /* TaskTableViewCell.swift */; };
@@ -54,6 +57,7 @@
 		01511EC229BD850700ABAC39 /* Correct-ding-sound-effect.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Correct-ding-sound-effect.mp3"; sourceTree = "<group>"; };
 		01511EC429BD887200ABAC39 /* Empty-trash.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Empty-trash.mp3"; sourceTree = "<group>"; };
 		01511EC629BD88B700ABAC39 /* SoundPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPlayer.swift; sourceTree = "<group>"; };
+		01511EC829BE1E6B00ABAC39 /* CalendarPopupWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarPopupWindow.swift; sourceTree = "<group>"; };
 		0161A4462904E5F100C53960 /* MyList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0161A4492904E5F100C53960 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0161A44B2904E5F100C53960 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,6 +78,8 @@
 		0161A4822905216000C53960 /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		0161A4842905216D00C53960 /* AccountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountController.swift; sourceTree = "<group>"; };
 		0161A486290664F000C53960 /* CreateFolderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFolderController.swift; sourceTree = "<group>"; };
+		017805F729C8C54500AE3CED /* CalendarPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarPopupViewController.swift; sourceTree = "<group>"; };
+		017805F829C8C54500AE3CED /* CalendarPopupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarPopupViewController.xib; sourceTree = "<group>"; };
 		01AA9D1029B4C9FF0051F49C /* CheckBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxView.swift; sourceTree = "<group>"; };
 		01AA9D1229B4CAD10051F49C /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		01AA9D1429B4CC110051F49C /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
@@ -136,6 +142,7 @@
 		0161A4482904E5F100C53960 /* MyList */ = {
 			isa = PBXGroup;
 			children = (
+				017805F629C8C50500AE3CED /* CalendarPopup */,
 				01511EC129BD84EF00ABAC39 /* audio */,
 				0161A4492904E5F100C53960 /* AppDelegate.swift */,
 				0161A44B2904E5F100C53960 /* SceneDelegate.swift */,
@@ -156,6 +163,7 @@
 				01AA9D1229B4CAD10051F49C /* Task.swift */,
 				01AA9D1429B4CC110051F49C /* TaskTableViewCell.swift */,
 				01511EC629BD88B700ABAC39 /* SoundPlayer.swift */,
+				01511EC829BE1E6B00ABAC39 /* CalendarPopupWindow.swift */,
 			);
 			path = MyList;
 			sourceTree = "<group>";
@@ -175,6 +183,15 @@
 				0161A46F2904E5F200C53960 /* MyListUITestsLaunchTests.swift */,
 			);
 			path = MyListUITests;
+			sourceTree = "<group>";
+		};
+		017805F629C8C50500AE3CED /* CalendarPopup */ = {
+			isa = PBXGroup;
+			children = (
+				017805F729C8C54500AE3CED /* CalendarPopupViewController.swift */,
+				017805F829C8C54500AE3CED /* CalendarPopupViewController.xib */,
+			);
+			path = CalendarPopup;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -282,6 +299,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				01511EC529BD887300ABAC39 /* Empty-trash.mp3 in Resources */,
+				017805FA29C8C54500AE3CED /* CalendarPopupViewController.xib in Resources */,
 				01511EC329BD850700ABAC39 /* Correct-ding-sound-effect.mp3 in Resources */,
 				0161A4592904E5F200C53960 /* LaunchScreen.storyboard in Resources */,
 				0161A4562904E5F200C53960 /* Assets.xcassets in Resources */,
@@ -314,12 +332,14 @@
 				01AA9D1529B4CC110051F49C /* TaskTableViewCell.swift in Sources */,
 				01511EBD29BCA0BA00ABAC39 /* FavoriteView.swift in Sources */,
 				0161A44E2904E5F100C53960 /* ViewController.swift in Sources */,
+				017805F929C8C54500AE3CED /* CalendarPopupViewController.swift in Sources */,
 				0161A4542904E5F100C53960 /* MyList.xcdatamodeld in Sources */,
 				0161A47D29051F2400C53960 /* CustomTabBarController.swift in Sources */,
 				01AA9D1329B4CAD10051F49C /* Task.swift in Sources */,
 				0161A44A2904E5F100C53960 /* AppDelegate.swift in Sources */,
 				0161A44C2904E5F100C53960 /* SceneDelegate.swift in Sources */,
 				01AA9D1129B4C9FF0051F49C /* CheckBoxView.swift in Sources */,
+				01511EC929BE1E6B00ABAC39 /* CalendarPopupWindow.swift in Sources */,
 				01511EC729BD88B700ABAC39 /* SoundPlayer.swift in Sources */,
 				0161A4852905216D00C53960 /* AccountController.swift in Sources */,
 				0161A4812905214E00C53960 /* PlanController.swift in Sources */,
