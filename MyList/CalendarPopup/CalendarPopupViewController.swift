@@ -9,6 +9,9 @@ import UIKit
 
 class CalendarPopupViewController: UIViewController {
 
+    
+    @IBOutlet weak var datePicker: UIDatePicker!
+    
     @IBAction func Done(_ sender: Any) {
         hide()
     }
@@ -26,6 +29,13 @@ class CalendarPopupViewController: UIViewController {
         super.viewDidLoad()
 
         configView()
+        
+        datePicker.locale = .current
+        datePicker.datePickerMode = .date
+        datePicker.preferredDatePickerStyle = .inline
+        datePicker.date = Date()
+        
+        datePicker.addTarget(self, action: #selector(dateSelected), for: .valueChanged)
     }
     
     func configView() {
@@ -38,5 +48,12 @@ class CalendarPopupViewController: UIViewController {
 
     func hide() {
         self.dismiss(animated: true)
+    }
+    
+    @objc func dateSelected() {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy"
+        let finalDate = dateFormatter.string(from: datePicker.date)
+        print(finalDate)
     }
 }
