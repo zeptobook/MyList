@@ -29,6 +29,16 @@
 		0161A487290664F000C53960 /* CreateFolderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0161A486290664F000C53960 /* CreateFolderController.swift */; };
 		017805F929C8C54500AE3CED /* CalendarPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017805F729C8C54500AE3CED /* CalendarPopupViewController.swift */; };
 		017805FA29C8C54500AE3CED /* CalendarPopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 017805F829C8C54500AE3CED /* CalendarPopupViewController.xib */; };
+		017805FE29CEB74400AE3CED /* TimeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017805FC29CEB74400AE3CED /* TimeTableViewCell.swift */; };
+		017805FF29CEB74400AE3CED /* TimeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 017805FD29CEB74400AE3CED /* TimeTableViewCell.xib */; };
+		0178060329CEB78C00AE3CED /* CalendarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0178060129CEB78C00AE3CED /* CalendarTableViewCell.swift */; };
+		0178060429CEB78C00AE3CED /* CalendarTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0178060229CEB78C00AE3CED /* CalendarTableViewCell.xib */; };
+		0178060829CEB7C200AE3CED /* ReminderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0178060629CEB7C200AE3CED /* ReminderTableViewCell.swift */; };
+		0178060929CEB7C200AE3CED /* ReminderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0178060729CEB7C200AE3CED /* ReminderTableViewCell.xib */; };
+		0178060D29CEB7E600AE3CED /* RepeatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0178060B29CEB7E600AE3CED /* RepeatTableViewCell.swift */; };
+		0178060E29CEB7E600AE3CED /* RepeatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0178060C29CEB7E600AE3CED /* RepeatTableViewCell.xib */; };
+		0178061729CF226700AE3CED /* CalenderCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0178061529CF226700AE3CED /* CalenderCustomTableViewCell.swift */; };
+		0178061829CF226700AE3CED /* CalenderCustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0178061629CF226700AE3CED /* CalenderCustomTableViewCell.xib */; };
 		01AA9D1129B4C9FF0051F49C /* CheckBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AA9D1029B4C9FF0051F49C /* CheckBoxView.swift */; };
 		01AA9D1329B4CAD10051F49C /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AA9D1229B4CAD10051F49C /* Task.swift */; };
 		01AA9D1529B4CC110051F49C /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AA9D1429B4CC110051F49C /* TaskTableViewCell.swift */; };
@@ -78,6 +88,16 @@
 		0161A486290664F000C53960 /* CreateFolderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFolderController.swift; sourceTree = "<group>"; };
 		017805F729C8C54500AE3CED /* CalendarPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarPopupViewController.swift; sourceTree = "<group>"; };
 		017805F829C8C54500AE3CED /* CalendarPopupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarPopupViewController.xib; sourceTree = "<group>"; };
+		017805FC29CEB74400AE3CED /* TimeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTableViewCell.swift; sourceTree = "<group>"; };
+		017805FD29CEB74400AE3CED /* TimeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeTableViewCell.xib; sourceTree = "<group>"; };
+		0178060129CEB78C00AE3CED /* CalendarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTableViewCell.swift; sourceTree = "<group>"; };
+		0178060229CEB78C00AE3CED /* CalendarTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarTableViewCell.xib; sourceTree = "<group>"; };
+		0178060629CEB7C200AE3CED /* ReminderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderTableViewCell.swift; sourceTree = "<group>"; };
+		0178060729CEB7C200AE3CED /* ReminderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReminderTableViewCell.xib; sourceTree = "<group>"; };
+		0178060B29CEB7E600AE3CED /* RepeatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatTableViewCell.swift; sourceTree = "<group>"; };
+		0178060C29CEB7E600AE3CED /* RepeatTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepeatTableViewCell.xib; sourceTree = "<group>"; };
+		0178061529CF226700AE3CED /* CalenderCustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderCustomTableViewCell.swift; sourceTree = "<group>"; };
+		0178061629CF226700AE3CED /* CalenderCustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalenderCustomTableViewCell.xib; sourceTree = "<group>"; };
 		01AA9D1029B4C9FF0051F49C /* CheckBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxView.swift; sourceTree = "<group>"; };
 		01AA9D1229B4CAD10051F49C /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		01AA9D1429B4CC110051F49C /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
@@ -140,6 +160,11 @@
 		0161A4482904E5F100C53960 /* MyList */ = {
 			isa = PBXGroup;
 			children = (
+				0178061429CF224100AE3CED /* CalenderCustomTableViewCell */,
+				0178060A29CEB7C900AE3CED /* RepeatTableViewCell */,
+				0178060529CEB79E00AE3CED /* ReminderTableViewCell */,
+				0178060029CEB75F00AE3CED /* CalendarTableViewCell */,
+				017805FB29CEB71700AE3CED /* TimeTableViewCell */,
 				017805F629C8C50500AE3CED /* CalendarPopup */,
 				01511EC129BD84EF00ABAC39 /* audio */,
 				0161A4492904E5F100C53960 /* AppDelegate.swift */,
@@ -189,6 +214,51 @@
 				017805F829C8C54500AE3CED /* CalendarPopupViewController.xib */,
 			);
 			path = CalendarPopup;
+			sourceTree = "<group>";
+		};
+		017805FB29CEB71700AE3CED /* TimeTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				017805FC29CEB74400AE3CED /* TimeTableViewCell.swift */,
+				017805FD29CEB74400AE3CED /* TimeTableViewCell.xib */,
+			);
+			path = TimeTableViewCell;
+			sourceTree = "<group>";
+		};
+		0178060029CEB75F00AE3CED /* CalendarTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				0178060129CEB78C00AE3CED /* CalendarTableViewCell.swift */,
+				0178060229CEB78C00AE3CED /* CalendarTableViewCell.xib */,
+			);
+			path = CalendarTableViewCell;
+			sourceTree = "<group>";
+		};
+		0178060529CEB79E00AE3CED /* ReminderTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				0178060629CEB7C200AE3CED /* ReminderTableViewCell.swift */,
+				0178060729CEB7C200AE3CED /* ReminderTableViewCell.xib */,
+			);
+			path = ReminderTableViewCell;
+			sourceTree = "<group>";
+		};
+		0178060A29CEB7C900AE3CED /* RepeatTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				0178060B29CEB7E600AE3CED /* RepeatTableViewCell.swift */,
+				0178060C29CEB7E600AE3CED /* RepeatTableViewCell.xib */,
+			);
+			path = RepeatTableViewCell;
+			sourceTree = "<group>";
+		};
+		0178061429CF224100AE3CED /* CalenderCustomTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				0178061529CF226700AE3CED /* CalenderCustomTableViewCell.swift */,
+				0178061629CF226700AE3CED /* CalenderCustomTableViewCell.xib */,
+			);
+			path = CalenderCustomTableViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -295,12 +365,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0178061829CF226700AE3CED /* CalenderCustomTableViewCell.xib in Resources */,
 				01511EC529BD887300ABAC39 /* Empty-trash.mp3 in Resources */,
 				017805FA29C8C54500AE3CED /* CalendarPopupViewController.xib in Resources */,
 				01511EC329BD850700ABAC39 /* Correct-ding-sound-effect.mp3 in Resources */,
 				0161A4592904E5F200C53960 /* LaunchScreen.storyboard in Resources */,
 				0161A4562904E5F200C53960 /* Assets.xcassets in Resources */,
+				0178060929CEB7C200AE3CED /* ReminderTableViewCell.xib in Resources */,
+				0178060E29CEB7E600AE3CED /* RepeatTableViewCell.xib in Resources */,
+				017805FF29CEB74400AE3CED /* TimeTableViewCell.xib in Resources */,
 				0161A4512904E5F100C53960 /* Main.storyboard in Resources */,
+				0178060429CEB78C00AE3CED /* CalendarTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,10 +402,13 @@
 			files = (
 				0161A4832905216000C53960 /* SettingsController.swift in Sources */,
 				01AA9D1529B4CC110051F49C /* TaskTableViewCell.swift in Sources */,
+				0178060829CEB7C200AE3CED /* ReminderTableViewCell.swift in Sources */,
 				01511EBD29BCA0BA00ABAC39 /* FavoriteView.swift in Sources */,
+				0178060D29CEB7E600AE3CED /* RepeatTableViewCell.swift in Sources */,
 				0161A44E2904E5F100C53960 /* ViewController.swift in Sources */,
 				017805F929C8C54500AE3CED /* CalendarPopupViewController.swift in Sources */,
 				0161A4542904E5F100C53960 /* MyList.xcdatamodeld in Sources */,
+				0178061729CF226700AE3CED /* CalenderCustomTableViewCell.swift in Sources */,
 				0161A47D29051F2400C53960 /* CustomTabBarController.swift in Sources */,
 				01AA9D1329B4CAD10051F49C /* Task.swift in Sources */,
 				0161A44A2904E5F100C53960 /* AppDelegate.swift in Sources */,
@@ -339,8 +417,10 @@
 				01511EC729BD88B700ABAC39 /* SoundPlayer.swift in Sources */,
 				0161A4852905216D00C53960 /* AccountController.swift in Sources */,
 				0161A4812905214E00C53960 /* PlanController.swift in Sources */,
+				017805FE29CEB74400AE3CED /* TimeTableViewCell.swift in Sources */,
 				0161A47F2905213B00C53960 /* ListController.swift in Sources */,
 				0161A487290664F000C53960 /* CreateFolderController.swift in Sources */,
+				0178060329CEB78C00AE3CED /* CalendarTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

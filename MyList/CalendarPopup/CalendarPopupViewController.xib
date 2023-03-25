@@ -4,12 +4,13 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CalendarPopupViewController" customModule="MyList" customModuleProvider="target">
             <connections>
-                <outlet property="datePicker" destination="hNN-gn-3lY" id="424-tQ-O2C"/>
+                <outlet property="tableView" destination="qYF-8J-7Ew" id="oFH-ab-0tM"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,43 +19,52 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date And Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zbt-bF-zfz">
-                    <rect key="frame" x="140" y="79" width="113" height="21"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="qYF-8J-7Ew">
+                    <rect key="frame" x="0.0" y="59" width="393" height="678"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="21" id="L2P-x9-nF0"/>
-                        <constraint firstAttribute="width" constant="113" id="iGf-jl-FfY"/>
+                        <constraint firstAttribute="height" constant="678" id="gPa-rp-ysc"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pdc-i7-jvb">
-                    <rect key="frame" x="307" y="74" width="70" height="34.333333333333343"/>
-                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                    <state key="normal" title="Done"/>
-                    <buttonConfiguration key="configuration" style="gray" title="Done"/>
-                    <connections>
-                        <action selector="Done:" destination="-1" eventType="touchUpInside" id="wpy-nN-rHA"/>
-                    </connections>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q74-Sa-dPj">
+                    <rect key="frame" x="49" y="783" width="77" height="35"/>
+                    <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="77" id="NIg-xC-jvc"/>
+                        <constraint firstAttribute="height" constant="35" id="qAD-OJ-UMX"/>
+                    </constraints>
+                    <color key="tintColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Cancel"/>
                 </button>
-                <datePicker contentMode="center" contentHorizontalAlignment="fill" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="inline" translatesAutoresizingMaskIntoConstraints="NO" id="hNN-gn-3lY">
-                    <rect key="frame" x="16" y="128.33333333333334" width="361" height="376.33333333333326"/>
-                </datePicker>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wvZ-EF-ndw">
+                    <rect key="frame" x="269" y="783" width="75" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="75" id="Q4U-eD-TzZ"/>
+                        <constraint firstAttribute="height" constant="35" id="xtP-n2-Mf4"/>
+                    </constraints>
+                    <color key="tintColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="Zbt-bF-zfz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="140" id="Atu-nK-fEN"/>
-                <constraint firstItem="hNN-gn-3lY" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="DWY-Cv-1s9"/>
-                <constraint firstAttribute="trailing" secondItem="hNN-gn-3lY" secondAttribute="trailing" constant="16" id="ESJ-O9-Rj0"/>
-                <constraint firstItem="Pdc-i7-jvb" firstAttribute="leading" secondItem="Zbt-bF-zfz" secondAttribute="trailing" constant="54" id="LRp-lE-z7g"/>
-                <constraint firstItem="Pdc-i7-jvb" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="15" id="MmK-wU-UbM"/>
-                <constraint firstItem="hNN-gn-3lY" firstAttribute="top" secondItem="Pdc-i7-jvb" secondAttribute="bottom" constant="20" id="Zkr-fS-R8m"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Pdc-i7-jvb" secondAttribute="trailing" constant="16" id="cIt-n0-Q6a"/>
-                <constraint firstItem="Zbt-bF-zfz" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="y10-qd-Aas"/>
+                <constraint firstItem="Q74-Sa-dPj" firstAttribute="top" secondItem="qYF-8J-7Ew" secondAttribute="bottom" constant="46" id="426-bw-tTj"/>
+                <constraint firstItem="qYF-8J-7Ew" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="6Ok-Jm-254"/>
+                <constraint firstItem="qYF-8J-7Ew" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Rku-xb-YhA"/>
+                <constraint firstItem="wvZ-EF-ndw" firstAttribute="top" secondItem="qYF-8J-7Ew" secondAttribute="bottom" constant="46" id="Umc-Nb-IQR"/>
+                <constraint firstItem="Q74-Sa-dPj" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="49" id="k2B-Q4-Lmy"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="wvZ-EF-ndw" secondAttribute="trailing" constant="49" id="nja-sf-tOm"/>
+                <constraint firstItem="qYF-8J-7Ew" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="rZN-au-fTE"/>
             </constraints>
             <point key="canvasLocation" x="136.64122137404578" y="19.718309859154932"/>
         </view>
     </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

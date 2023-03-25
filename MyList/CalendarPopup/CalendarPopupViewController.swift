@@ -7,10 +7,13 @@
 
 import UIKit
 
-class CalendarPopupViewController: UIViewController {
-
+class CalendarPopupViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+  
+    var cellImage = ["clock.fill", "clock.badge.fill", "clock.arrow.2.circlepath"]
+    var cellLabel = ["Time", "Reminder", "Repeat"]
+    var cellType = ["time", "reminder", "repeat"]
     
-    @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet weak var tableView: UITableView!
     
     @IBAction func Done(_ sender: Any) {
         hide()
@@ -27,15 +30,18 @@ class CalendarPopupViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "DefaultCell")
+        
+        tableView.register(CalenderCustomTableViewCell.nib(), forCellReuseIdentifier: CalenderCustomTableViewCell.identifier)
+        
+        tableView.register(CalendarTableViewCell.nib(), forCellReuseIdentifier: CalendarTableViewCell.identifier)
 
         configView()
         
-        datePicker.locale = .current
-        datePicker.datePickerMode = .date
-        datePicker.preferredDatePickerStyle = .inline
-        datePicker.date = Date()
-        
-        datePicker.addTarget(self, action: #selector(dateSelected), for: .valueChanged)
     }
     
     func configView() {
@@ -50,10 +56,26 @@ class CalendarPopupViewController: UIViewController {
         self.dismiss(animated: true)
     }
     
-    @objc func dateSelected() {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd-MM-yyyy"
-        let finalDate = dateFormatter.string(from: datePicker.date)
-        print(finalDate)
+
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 4
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // Return three custom cells
+        if indexPath.row > 0 {
+            let customCell =  tableView.dequeueReusableCell(withIdentifier: CalenderCustomTableViewCell.identifier, for: indexPath) as! CalenderCustomTableViewCell
+            
+            customCell.configure(with: cellLabel[indexPath.row - 1], imageName: cellImage[indexPath.row - 1], cellType: cellType[indexPath.row - 1])
+            
+            return customCell
+        }
+        
+        // Return calender cell
+        let calenderCell = tableView.dequeueReusableCell(withIdentifier: CalendarTableViewCell.identifier, for: indexPath) as! CalendarTableViewCell
+        
+        calenderCell.configure(cellType: "calender")
+        return calenderCell
     }
 }
